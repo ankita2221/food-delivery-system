@@ -1,0 +1,1103 @@
+{
+  "users": [
+    {
+      "id": "cust-1",
+      "name": "Alex Johnson",
+      "email": "alex@example.com",
+      "role": "customer",
+      "phone": "(555) 019-2834",
+      "address": "125 Broadway, New York, NY 10006",
+      "createdAt": "2026-06-08T08:57:07.063Z"
+    },
+    {
+      "id": "owner-1",
+      "name": "Chef Marcus",
+      "email": "marcus@restaurant.com",
+      "role": "restaurant",
+      "phone": "(555) 321-4567",
+      "restaurantId": "rest-1",
+      "createdAt": "2026-06-08T08:57:07.063Z"
+    },
+    {
+      "id": "driver-1",
+      "name": "Rider Swift",
+      "email": "rider@delivery.com",
+      "role": "delivery",
+      "phone": "(555) 789-1011",
+      "createdAt": "2026-06-08T08:57:07.063Z"
+    },
+    {
+      "id": "admin-1",
+      "name": "Admin Moderator",
+      "email": "admin@portal.com",
+      "role": "admin",
+      "phone": "(555) 444-8888",
+      "createdAt": "2026-06-08T08:57:07.063Z"
+    },
+    {
+      "id": "usr-1781213711589",
+      "name": "ankita",
+      "email": "ankitabinkar22@gmail.com",
+      "role": "customer",
+      "phone": "9373193981",
+      "address": "maharashtra",
+      "createdAt": "2026-06-11T21:35:11.589Z"
+    },
+    {
+      "id": "usr-1781213772475",
+      "name": "ankita",
+      "email": "binkarankita6@gmail.com",
+      "role": "customer",
+      "phone": "+919373193981",
+      "address": "mh",
+      "createdAt": "2026-06-11T21:36:12.475Z"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "rest-1",
+      "name": "Burger Craftsmen",
+      "cuisine": "Gourmet Burgers & Shakes",
+      "rating": 4.8,
+      "reviewsCount": 142,
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80",
+      "address": "42 Fulton St, Financial District",
+      "ownerId": "owner-1",
+      "isActive": true,
+      "deliveryTime": "15-25 min",
+      "deliveryFee": 2.99,
+      "createdAt": "2026-05-09T08:57:07.042Z"
+    },
+    {
+      "id": "rest-2",
+      "name": "Bella Italia Co.",
+      "cuisine": "Artisanal Pizza & Pasta",
+      "rating": 4.7,
+      "reviewsCount": 98,
+      "image": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80",
+      "address": "88 Mulberry St, Little Italy",
+      "ownerId": "owner-2",
+      "isActive": true,
+      "deliveryTime": "25-35 min",
+      "deliveryFee": 3.49,
+      "createdAt": "2026-05-14T08:57:07.044Z"
+    },
+    {
+      "id": "rest-3",
+      "name": "Sakura Zen Sushi",
+      "cuisine": "Japanese, Sushi & Ramen",
+      "rating": 4.9,
+      "reviewsCount": 210,
+      "image": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=800&q=80",
+      "address": "154 Bleecker St, Greenwich Village",
+      "ownerId": "owner-3",
+      "isActive": true,
+      "deliveryTime": "30-45 min",
+      "deliveryFee": 4.99,
+      "createdAt": "2026-04-29T08:57:07.044Z"
+    },
+    {
+      "id": "rest-4",
+      "name": "Taco Fiesta",
+      "cuisine": "Authentic Mexican Street Food",
+      "rating": 4.6,
+      "reviewsCount": 76,
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80",
+      "address": "312 Grand St, Lower East Side",
+      "ownerId": "owner-4",
+      "isActive": true,
+      "deliveryTime": "20-30 min",
+      "deliveryFee": 1.99,
+      "createdAt": "2026-05-24T08:57:07.044Z"
+    },
+    {
+      "id": "rest-5",
+      "name": "The Green Leaf Kitchen",
+      "cuisine": "Healthy Bowls, Salads & Juices",
+      "rating": 4.5,
+      "reviewsCount": 54,
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
+      "address": "65 University Pl, Union Square",
+      "ownerId": "owner-5",
+      "isActive": true,
+      "deliveryTime": "20-35 min",
+      "deliveryFee": 2.49,
+      "createdAt": "2026-05-29T08:57:07.044Z"
+    }
+  ],
+  "menuItems": [
+    {
+      "id": "menu-101",
+      "restaurantId": "rest-1",
+      "name": "Classic Craftsman Cheeseburger",
+      "description": "Dry-aged custom beef blend, double cheddar, house pickles, craft spread, toasted brioche.",
+      "price": 9.99,
+      "category": "Burgers",
+      "image": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-102",
+      "restaurantId": "rest-1",
+      "name": "Truffle Mushroom Burger",
+      "description": "Crisp caramelized onions, Swiss cheese, wild mushrooms, white truffle aioli.",
+      "price": 12.99,
+      "category": "Burgers",
+      "image": "https://images.unsplash.com/photo-1586190848861-99aa4a171e90?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-103",
+      "restaurantId": "rest-1",
+      "name": "Loaded Cheese Fries",
+      "description": "Hand-cut Idaho fries smothered in warm cheddar jack cheese, crumbled hickory bacon, chives.",
+      "price": 5.49,
+      "category": "Sides",
+      "image": "https://images.unsplash.com/photo-1585109649139-366815a0d713?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-104",
+      "restaurantId": "rest-1",
+      "name": "Signature Vanilla Bean Shake",
+      "description": "Thick hand-spun Madagascar Vanilla ice cream whipped with whole milk and sweet cream.",
+      "price": 4.99,
+      "category": "Drinks",
+      "image": "https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-201",
+      "restaurantId": "rest-2",
+      "name": "Margherita Pizza (12\")",
+      "description": "San Marzano marinara, fresh mozzarella di bufala, torn organic basil, extra virgin olive oil drizzle.",
+      "price": 14.99,
+      "category": "Pizza",
+      "image": "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-202",
+      "restaurantId": "rest-2",
+      "name": "Pepperoni Supreme (12\")",
+      "description": "Curly cup pepperoni, spicy salami, hot honey, mozzarella, marinara.",
+      "price": 16.99,
+      "category": "Pizza",
+      "image": "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-203",
+      "restaurantId": "rest-2",
+      "name": "Creamy Fettuccine Alfredo",
+      "description": "Homemade egg pasta tossed in dynamic heavy cream butter parmesan reduction sauce with fresh cracked pepper.",
+      "price": 13.99,
+      "category": "Pasta",
+      "image": "https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-204",
+      "restaurantId": "rest-2",
+      "name": "Garlic Bread Knots",
+      "description": "Soft rolls baked with garlic herb infused butter, garlic flakes, served with chunky warm marinara.",
+      "price": 4.99,
+      "category": "Sides",
+      "image": "https://images.unsplash.com/photo-1619535860434-ba1d8fa12536?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-301",
+      "restaurantId": "rest-3",
+      "name": "Zen Rainbow Roll",
+      "description": "Tuna, salmon, yellowtail, avocado layered atop California snow crab avocado cucumber core roll.",
+      "price": 15.99,
+      "category": "Sushi",
+      "image": "https://images.unsplash.com/photo-1611143669185-af224c5e3252?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-302",
+      "restaurantId": "rest-3",
+      "name": "Salmon Nigiri Platter",
+      "description": "6 pieces of premium Atlantic salmon slices hand-formed over seasoned sushi vinegar rice.",
+      "price": 11.99,
+      "category": "Sushi",
+      "image": "https://images.unsplash.com/photo-1582450871972-ab5ca641643d?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-303",
+      "restaurantId": "rest-3",
+      "name": "Tonkotsu Chashu Ramen",
+      "description": "Rich pork bone broth brewed 18 hours, tender pork belly, soft marinated egg, bamboo, wood ear mushrooms.",
+      "price": 14.5,
+      "category": "Ramen",
+      "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-304",
+      "restaurantId": "rest-3",
+      "name": "Organic Green Tea Mochan",
+      "description": "Matcha green tea ice cream wrapped in a sweet sticky rice shell, 3 units.",
+      "price": 5.99,
+      "category": "Drinks",
+      "image": "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-401",
+      "restaurantId": "rest-4",
+      "name": "Street Taco Platter",
+      "description": "3 gluten-free corn tortilla tacos (choice of Al Pastor, Barbacoa beef, Pollo), onions, cilantro, salsa verde.",
+      "price": 10.49,
+      "category": "Tacos",
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-402",
+      "restaurantId": "rest-4",
+      "name": "Loaded Beef Nachos",
+      "description": "Crispy tortilla chips piled high with seasoned ground beef, warm cheese sauce, fresh jalapeños, sour cream.",
+      "price": 11.99,
+      "category": "Plates",
+      "image": "https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-403",
+      "restaurantId": "rest-4",
+      "name": "Fresh Guacamole & Chips",
+      "description": "Hass avocado mashed daily with lime, cilantro, red onions, tomatoes, salted sea chips.",
+      "price": 6.49,
+      "category": "Sides",
+      "image": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-404",
+      "restaurantId": "rest-4",
+      "name": "Cinnamon Churros & Cajeta",
+      "description": "3 deep-fried cinnamon sugar pastry sticks served with Mexican goat milk caramel dip.",
+      "price": 4.99,
+      "category": "Drinks/Sweets",
+      "image": "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-501",
+      "restaurantId": "rest-5",
+      "name": "Quinoa Power Gym Bowl",
+      "description": "Warm quinoa, roasted sweet potatoes, kale, avocado, organic chickpea, creamy hummus and tahini glaze.",
+      "price": 11.49,
+      "category": "Healthy Bowls",
+      "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-502",
+      "restaurantId": "rest-5",
+      "name": "Mediterranean Harvest Salad",
+      "description": "Mixed greens, cherry tomatoes, cucumbers, Kalamata olives, sheep's milk feta, greek herb red vinaigrette.",
+      "price": 9.99,
+      "category": "Salads",
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-503",
+      "restaurantId": "rest-5",
+      "name": "Sourdough Avocado Toast Duo",
+      "description": "Toasted sourdough bread slices topped with hand-smashed avocado, heirloom tomatoes, sesame flakes, chili.",
+      "price": 8.49,
+      "category": "Comfort",
+      "image": "https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    },
+    {
+      "id": "menu-504",
+      "restaurantId": "rest-5",
+      "name": "Cold-Pressed Green Glow Juice",
+      "description": "100% freshly pressed organic celery, green apple, cucumber, curly kale, lemon and touch of ginger.",
+      "price": 5.99,
+      "category": "Drinks",
+      "image": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=400&q=80",
+      "available": true
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-1",
+      "restaurantId": "rest-1",
+      "customerId": "cust-1",
+      "customerName": "Jane Doe",
+      "rating": 5,
+      "comment": "The cheeseburger was incredibly juicy, and the shakes are legendary. Fast delivery too!",
+      "createdAt": "2026-06-03T08:57:07.044Z"
+    },
+    {
+      "id": "rev-2",
+      "restaurantId": "rest-1",
+      "customerId": "cust-2",
+      "customerName": "Arthur King",
+      "rating": 4,
+      "comment": "Great quality meat. Truffle frites could use a bit more seasoning, but burger was epic.",
+      "createdAt": "2026-06-05T08:57:07.044Z"
+    },
+    {
+      "id": "rev-3",
+      "restaurantId": "rest-2",
+      "customerId": "cust-3",
+      "customerName": "Emma Watson",
+      "rating": 5,
+      "comment": "The cup-and-char pepperoni was hot and the crust was absolutely crispy. Reminds me of Naples!",
+      "createdAt": "2026-06-06T08:57:07.044Z"
+    },
+    {
+      "id": "rev-4",
+      "restaurantId": "rest-3",
+      "customerId": "cust-4",
+      "customerName": "Satoshi Nakamoto",
+      "rating": 5,
+      "comment": "Highest quality tuna and salmon in town. Excellent packaging keeps the rolls perfectly fresh.",
+      "createdAt": "2026-06-07T08:57:07.044Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ord-1781192971139",
+      "customerId": "cust-1",
+      "customerName": "Alex Johnson",
+      "customerPhone": "(555) 019-2834",
+      "restaurantId": "rest-3",
+      "restaurantName": "Sakura Zen Sushi",
+      "items": [
+        {
+          "id": "menu-302",
+          "name": "Salmon Nigiri Platter",
+          "price": 11.99,
+          "quantity": 4
+        }
+      ],
+      "totalAmount": 52.95,
+      "status": "delivered",
+      "deliveryAddress": "125 Broadway, New York, NY 10006",
+      "deliveryFee": 4.99,
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "deliveryPartnerId": "driver-1",
+      "deliveryPartnerName": "Rider Swift",
+      "createdAt": "2026-06-11T15:49:31.139Z",
+      "updatedAt": "2026-06-11T15:51:00.104Z",
+      "deliveryCoords": {
+        "lat": 40.73821875,
+        "lng": -73.99408125
+      }
+    },
+    {
+      "id": "ord-1781212675298",
+      "customerId": "cust-1",
+      "customerName": "Alex Johnson",
+      "customerPhone": "(555) 019-2834",
+      "restaurantId": "rest-1",
+      "restaurantName": "Burger Craftsmen",
+      "items": [
+        {
+          "id": "menu-101",
+          "name": "Classic Craftsman Cheeseburger",
+          "price": 9.99,
+          "quantity": 1
+        },
+        {
+          "id": "menu-103",
+          "name": "Loaded Cheese Fries",
+          "price": 5.49,
+          "quantity": 2
+        },
+        {
+          "id": "menu-104",
+          "name": "Signature Vanilla Bean Shake",
+          "price": 4.99,
+          "quantity": 3
+        },
+        {
+          "id": "menu-102",
+          "name": "Truffle Mushroom Burger",
+          "price": 12.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 51.92,
+      "status": "delivered",
+      "deliveryAddress": "125 Broadway, New York, NY 10006",
+      "deliveryFee": 2.99,
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "deliveryPartnerId": "driver-1",
+      "deliveryPartnerName": "Rider Swift",
+      "createdAt": "2026-06-11T21:17:55.299Z",
+      "updatedAt": "2026-06-11T21:19:24.155Z",
+      "deliveryCoords": {
+        "lat": 40.725956249999996,
+        "lng": -73.998525
+      }
+    },
+    {
+      "id": "ord-1784186505265",
+      "customerId": "cust-1",
+      "customerName": "Alex Johnson",
+      "customerPhone": "(555) 019-2834",
+      "restaurantId": "rest-2",
+      "restaurantName": "Bella Italia Co.",
+      "items": [
+        {
+          "id": "menu-204",
+          "name": "Garlic Bread Knots",
+          "price": 4.99,
+          "quantity": 1
+        },
+        {
+          "id": "menu-201",
+          "name": "Margherita Pizza (12\")",
+          "price": 14.99,
+          "quantity": 2
+        },
+        {
+          "id": "menu-203",
+          "name": "Creamy Fettuccine Alfredo",
+          "price": 13.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 52.45,
+      "status": "delivered",
+      "deliveryAddress": "125 Broadway, New York, NY 10006",
+      "deliveryFee": 3.49,
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "deliveryPartnerId": "driver-1",
+      "deliveryPartnerName": "Rider Swift",
+      "createdAt": "2026-07-16T07:21:45.265Z",
+      "updatedAt": "2026-07-16T07:23:18.131Z",
+      "deliveryCoords": {
+        "lat": 40.7323125,
+        "lng": -73.99284375
+      }
+    },
+    {
+      "id": "ord-1784202505246",
+      "customerId": "cust-1",
+      "customerName": "Alex Johnson",
+      "customerPhone": "(555) 019-2834",
+      "restaurantId": "rest-1",
+      "restaurantName": "Burger Craftsmen",
+      "items": [
+        {
+          "id": "menu-101",
+          "name": "Classic Craftsman Cheeseburger",
+          "price": 9.99,
+          "quantity": 1
+        },
+        {
+          "id": "menu-102",
+          "name": "Truffle Mushroom Burger",
+          "price": 12.99,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 25.97,
+      "status": "delivered",
+      "deliveryAddress": "125 Broadway, New York, NY 10006",
+      "deliveryFee": 2.99,
+      "paymentStatus": "paid",
+      "paymentMethod": "cash",
+      "deliveryPartnerId": "driver-1",
+      "deliveryPartnerName": "Rider Swift",
+      "createdAt": "2026-07-16T11:48:25.246Z",
+      "updatedAt": "2026-07-16T14:49:23.107Z",
+      "deliveryCoords": {
+        "lat": 40.718475,
+        "lng": -74.0028
+      }
+    }
+  ],
+  "notifications": [
+    {
+      "id": "not-1",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Welcome to Foodly!",
+      "message": "Browse restaurants and enjoy premium, secure online delivery.",
+      "read": true,
+      "createdAt": "2026-06-08T08:57:07.063Z"
+    },
+    {
+      "id": "not-1781192971157-227",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Payment Approved 💳",
+      "message": "Successfully authorized securely. Paid $52.95 to Sakura Zen Sushi. Your order receipt is #ord-1.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:49:31.157Z"
+    },
+    {
+      "id": "not-1781192971172-793",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "New Ticket Alert 🍔",
+      "message": "Incoming order #ord-1 details: 4x Salmon Nigiri Platter.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:49:31.173Z"
+    },
+    {
+      "id": "not-1781192988040-748",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order CONFIRMED",
+      "message": "Your order has been confirmed by the restaurant! Preparation starting shortly.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:49:48.040Z"
+    },
+    {
+      "id": "not-1781192988051-10",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: confirmed.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:49:48.051Z"
+    },
+    {
+      "id": "not-1781193000045-578",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order PREPARING",
+      "message": "Chef Marcus is preparing your food now.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:00.045Z"
+    },
+    {
+      "id": "not-1781193000059-967",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: preparing.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:00.059Z"
+    },
+    {
+      "id": "not-1781193024069-123",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order READY",
+      "message": "Delicious food is packaged and ready for pickup!",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:24.069Z"
+    },
+    {
+      "id": "not-1781193024079-515",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: ready.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:24.079Z"
+    },
+    {
+      "id": "not-1781193036084-341",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order OUT_FOR_DELIVERY",
+      "message": "Rider Swift has picked up your meal and is on the way!",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:36.084Z"
+    },
+    {
+      "id": "not-1781193036094-137",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:36.094Z"
+    },
+    {
+      "id": "not-1781193036105-207",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:50:36.105Z"
+    },
+    {
+      "id": "not-1781193060114-209",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order DELIVERED",
+      "message": "Your meal has been safely delivered. Bon appétit!",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:51:00.114Z"
+    },
+    {
+      "id": "not-1781193060127-392",
+      "userId": "owner-3",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: delivered.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:51:00.127Z"
+    },
+    {
+      "id": "not-1781193060136-947",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now delivered.",
+      "read": false,
+      "orderId": "ord-1781192971139",
+      "createdAt": "2026-06-11T15:51:00.136Z"
+    },
+    {
+      "id": "not-1781212675362-177",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Payment Approved 💳",
+      "message": "Successfully authorized securely. Paid $51.92 to Burger Craftsmen. Your order receipt is #ord-1.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:17:55.362Z"
+    },
+    {
+      "id": "not-1781212675371-876",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "New Ticket Alert 🍔",
+      "message": "Incoming order #ord-1 details: 1x Classic Craftsman Cheeseburger, 2x Loaded Cheese Fries, 3x Signature Vanilla Bean Shake, 1x Truffle Mushroom Burger.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:17:55.371Z"
+    },
+    {
+      "id": "not-1781212692098-187",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order CONFIRMED",
+      "message": "Your order has been confirmed by the restaurant! Preparation starting shortly.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:12.098Z"
+    },
+    {
+      "id": "not-1781212692103-728",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: confirmed.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:12.103Z"
+    },
+    {
+      "id": "not-1781212704114-477",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order PREPARING",
+      "message": "Chef Marcus is preparing your food now.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:24.114Z"
+    },
+    {
+      "id": "not-1781212704122-102",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: preparing.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:24.122Z"
+    },
+    {
+      "id": "not-1781212728125-474",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order READY",
+      "message": "Delicious food is packaged and ready for pickup!",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:48.125Z"
+    },
+    {
+      "id": "not-1781212728134-642",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: ready.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:18:48.134Z"
+    },
+    {
+      "id": "not-1781212740138-588",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order OUT_FOR_DELIVERY",
+      "message": "Rider Swift has picked up your meal and is on the way!",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:00.138Z"
+    },
+    {
+      "id": "not-1781212740145-810",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:00.145Z"
+    },
+    {
+      "id": "not-1781212740155-935",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:00.155Z"
+    },
+    {
+      "id": "not-1781212764170-289",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order DELIVERED",
+      "message": "Your meal has been safely delivered. Bon appétit!",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:24.170Z"
+    },
+    {
+      "id": "not-1781212764176-816",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: delivered.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:24.176Z"
+    },
+    {
+      "id": "not-1781212764182-127",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now delivered.",
+      "read": false,
+      "orderId": "ord-1781212675298",
+      "createdAt": "2026-06-11T21:19:24.182Z"
+    },
+    {
+      "id": "not-1781213711597-403",
+      "userId": "usr-1781213711589",
+      "title": "Welcome to Foodly",
+      "message": "Successfully registered as a customer. Explore your custom panel!",
+      "read": false,
+      "createdAt": "2026-06-11T21:35:11.597Z"
+    },
+    {
+      "id": "not-1781213772481-498",
+      "userId": "usr-1781213772475",
+      "title": "Welcome to Foodly",
+      "message": "Successfully registered as a customer. Explore your custom panel!",
+      "read": false,
+      "createdAt": "2026-06-11T21:36:12.481Z"
+    },
+    {
+      "id": "not-1784186505299-613",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Payment Approved 💳",
+      "message": "Successfully authorized securely. Paid $52.45 to Bella Italia Co.. Your order receipt is #ord-1.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:21:45.299Z"
+    },
+    {
+      "id": "not-1784186505314-531",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "New Ticket Alert 🍔",
+      "message": "Incoming order #ord-1 details: 1x Garlic Bread Knots, 2x Margherita Pizza (12\"), 1x Creamy Fettuccine Alfredo.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:21:45.314Z"
+    },
+    {
+      "id": "not-1784186526121-637",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order CONFIRMED",
+      "message": "Your order has been confirmed by the restaurant! Preparation starting shortly.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:06.121Z"
+    },
+    {
+      "id": "not-1784186526134-130",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: confirmed.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:06.134Z"
+    },
+    {
+      "id": "not-1784186538125-41",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order PREPARING",
+      "message": "Chef Marcus is preparing your food now.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:18.125Z"
+    },
+    {
+      "id": "not-1784186538136-282",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: preparing.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:18.136Z"
+    },
+    {
+      "id": "not-1784186562137-965",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order READY",
+      "message": "Delicious food is packaged and ready for pickup!",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:42.137Z"
+    },
+    {
+      "id": "not-1784186562161-91",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: ready.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:42.161Z"
+    },
+    {
+      "id": "not-1784186574137-153",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order OUT_FOR_DELIVERY",
+      "message": "Rider Swift has picked up your meal and is on the way!",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:54.137Z"
+    },
+    {
+      "id": "not-1784186574152-740",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:54.152Z"
+    },
+    {
+      "id": "not-1784186574163-686",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:22:54.163Z"
+    },
+    {
+      "id": "not-1784186598145-12",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order DELIVERED",
+      "message": "Your meal has been safely delivered. Bon appétit!",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:23:18.145Z"
+    },
+    {
+      "id": "not-1784186598160-890",
+      "userId": "owner-2",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: delivered.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:23:18.160Z"
+    },
+    {
+      "id": "not-1784186598173-472",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now delivered.",
+      "read": false,
+      "orderId": "ord-1784186505265",
+      "createdAt": "2026-07-16T07:23:18.173Z"
+    },
+    {
+      "id": "not-1784202505278-721",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Payment Approved 💳",
+      "message": "Successfully authorized securely. Paid $25.97 to Burger Craftsmen. Your order receipt is #ord-1.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:48:25.278Z"
+    },
+    {
+      "id": "not-1784202505293-345",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "New Ticket Alert 🍔",
+      "message": "Incoming order #ord-1 details: 1x Classic Craftsman Cheeseburger, 1x Truffle Mushroom Burger.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:48:25.293Z"
+    },
+    {
+      "id": "not-1784202514412-750",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order Custom Update",
+      "message": "Your order status has been changed to: confirmed!",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:48:34.412Z"
+    },
+    {
+      "id": "not-1784202526978-615",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order PREPARING",
+      "message": "Chef Marcus is preparing your food now.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:48:46.978Z"
+    },
+    {
+      "id": "not-1784202526994-565",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: preparing.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:48:46.994Z"
+    },
+    {
+      "id": "not-1784202550988-89",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order READY",
+      "message": "Delicious food is packaged and ready for pickup!",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:49:10.988Z"
+    },
+    {
+      "id": "not-1784202550999-824",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: ready.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:49:10.999Z"
+    },
+    {
+      "id": "not-1784202562990-716",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order OUT_FOR_DELIVERY",
+      "message": "Rider Swift has picked up your meal and is on the way!",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:49:22.990Z"
+    },
+    {
+      "id": "not-1784202562995-709",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:49:22.995Z"
+    },
+    {
+      "id": "not-1784202563001-595",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now out_for_delivery.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T11:49:23.001Z"
+    },
+    {
+      "id": "not-1784213363114-664",
+      "userId": "cust-1",
+      "userRole": "customer",
+      "title": "Order DELIVERED",
+      "message": "Your meal has been safely delivered. Bon appétit!",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T14:49:23.114Z"
+    },
+    {
+      "id": "not-1784213363121-370",
+      "userId": "owner-1",
+      "userRole": "restaurant",
+      "title": "Order Update",
+      "message": "Order #ord-1 status updated to: delivered.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T14:49:23.121Z"
+    },
+    {
+      "id": "not-1784213363128-738",
+      "userId": "driver-1",
+      "userRole": "delivery",
+      "title": "Delivery Update",
+      "message": "Order #ord-1 state is now delivered.",
+      "read": false,
+      "orderId": "ord-1784202505246",
+      "createdAt": "2026-07-16T14:49:23.128Z"
+    }
+  ]
+}

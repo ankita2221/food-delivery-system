@@ -1,0 +1,179 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- Core Helper Functions ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- Users Collection ---
+    match /users/{userId} {
+      allow get: if isSignedIn();
+      allow list: if isSignedIn() && resource.data.id == request.auth.uid;
+      allow create: if isOwner(userId)
+        && incoming().id == userId
+        && incoming().name is string && incoming().name.size() <= 100
+        && incoming().email is string && incoming().email.size() <= 100
+        && incoming().role is string && (incoming().role == 'customer' || incoming().role == 'restaurant' || incoming().role == 'delivery' || incoming().role == 'admin')
+        && (!('phone' in incoming()) || (incoming().phone is string && incoming().phone.size() <= 30))
+        && (!('address' in incoming()) || (incoming().address is string && incoming().address.size() <= 200))
+        && (!('restaurantId' in incoming()) || (incoming().restaurantId is string && incoming().restaurantId.size() <= 128))
+        && incoming().keys().hasAll(['id', 'name', 'email', 'role'])
+        && incoming().keys().size() <= 8;
+
+      allow update: if isOwner(userId)
+        && incoming().id == existing().id
+        && incoming().role == existing().role
+        && (!('restaurantId' in incoming()) || incoming().restaurantId == (('restaurantId' in existing()) ? existing().restaurantId : ''))
+        && incoming().name is string && incoming().name.size() <= 100
+        && (!('phone' in incoming()) || (incoming().phone is string && incoming().phone.size() <= 30))
+        && (!('address' in incoming()) || (incoming().address is string && incoming().address.size() <= 200))
+        && incoming().keys().size() <= 8;
+    }
+
+    // --- Restaurants Collection ---
+    match /restaurants/{restaurantId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && incoming().id == restaurantId
+        && incoming().ownerId == request.auth.uid
+        && incoming().name is string && incoming().name.size() <= 100
+        && incoming().cuisine is string && incoming().cuisine.size() <= 50
+        && incoming().address is string && incoming().address.size() <= 200
+        && incoming().isActive is bool
+        && incoming().rating is number && incoming().rating >= 0 && incoming().rating <= 5
+        && incoming().reviewsCount is int && incoming().reviewsCount >= 0
+        && incoming().keys().hasAll(['id', 'name', 'cuisine', 'ownerId', 'isActive'])
+        && incoming().keys().size() <= 12;
+
+      allow update: if isSignedIn()
+        && (existing().ownerId == request.auth.uid || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'))
+        && incoming().id == existing().id
+        && incoming().ownerId == existing().ownerId
+        && incoming().name is string && incoming().name.size() <= 100
+        && incoming().cuisine is string && incoming().cuisine.size() <= 50
+        && incoming().address is string && incoming().address.size() <= 200
+        && incoming().isActive is bool
+        && incoming().keys().size() <= 12;
+    }
+
+    // --- MenuItems Collection ---
+    match /menuItems/{menuItemId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && incoming().id == menuItemId
+        && incoming().restaurantId is string
+        && (get(/databases/$(database)/documents/restaurants/$(incoming().restaurantId)).data.ownerId == request.auth.uid || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'))
+        && incoming().name is string && incoming().name.size() <= 100
+        && incoming().price is number && incoming().price > 0
+        && incoming().available is bool
+        && incoming().keys().hasAll(['id', 'restaurantId', 'name', 'price', 'available'])
+        && incoming().keys().size() <= 8;
+
+      allow update: if isSignedIn()
+        && (get(/databases/$(database)/documents/restaurants/$(existing().restaurantId)).data.ownerId == request.auth.uid || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'))
+        && incoming().id == existing().id
+        && incoming().restaurantId == existing().restaurantId
+        && incoming().name is string && incoming().name.size() <= 100
+        && incoming().price is number && incoming().price > 0
+        && incoming().available is bool
+        && incoming().keys().size() <= 8;
+
+      allow delete: if isSignedIn()
+        && (get(/databases/$(database)/documents/restaurants/$(existing().restaurantId)).data.ownerId == request.auth.uid || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'));
+    }
+
+    // --- Orders Collection ---
+    match /orders/{orderId} {
+      allow get: if isSignedIn()
+        && (resource.data.customerId == request.auth.uid
+            || resource.data.deliveryPartnerId == request.auth.uid
+            || get(/databases/$(database)/documents/restaurants/$(resource.data.restaurantId)).data.ownerId == request.auth.uid
+            || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'));
+
+      allow list: if isSignedIn();
+
+      allow create: if isSignedIn()
+        && incoming().id == orderId
+        && incoming().customerId == request.auth.uid
+        && incoming().totalAmount is number && incoming().totalAmount > 0
+        && (incoming().status == 'pending' || incoming().status == 'confirmed' || incoming().status == 'preparing' || incoming().status == 'ready' || incoming().status == 'out_for_delivery' || incoming().status == 'delivered' || incoming().status == 'cancelled')
+        && incoming().paymentStatus == 'paid'
+        && incoming().keys().hasAll(['id', 'customerId', 'restaurantId', 'items', 'totalAmount', 'status', 'paymentStatus'])
+        && incoming().keys().size() <= 18;
+
+      allow update: if isSignedIn()
+        && (
+          // Restaurant Owner transitioning status or assigning driver
+          (get(/databases/$(database)/documents/restaurants/$(existing().restaurantId)).data.ownerId == request.auth.uid
+            && incoming().customerId == existing().customerId
+            && incoming().id == existing().id
+            && incoming().status is string
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'updatedAt']))
+          ||
+          // Courier Partner accepting delivery or marking delivered
+          ((get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'delivery')
+            && incoming().customerId == existing().customerId
+            && incoming().id == existing().id
+            && incoming().status is string
+            && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'deliveryPartnerId', 'deliveryPartnerName', 'deliveryCoords', 'updatedAt']))
+          ||
+          // Administrator overrides
+          (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin')
+        );
+    }
+
+    // --- Reviews Collection ---
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if isSignedIn()
+        && incoming().id == reviewId
+        && incoming().customerId == request.auth.uid
+        && incoming().rating is number && incoming().rating >= 1 && incoming().rating <= 5
+        && incoming().keys().hasAll(['id', 'restaurantId', 'customerId', 'rating'])
+        && incoming().keys().size() <= 8;
+    }
+
+    // --- Notifications Collection ---
+    match /notifications/{notificationId} {
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid
+            || (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin'));
+
+      allow create: if isSignedIn()
+        && incoming().id == notificationId
+        && incoming().userId is string
+        && incoming().title is string && incoming().title.size() <= 150
+        && incoming().message is string && incoming().message.size() <= 500
+        && incoming().read is bool
+        && incoming().keys().hasAll(['id', 'userId', 'title', 'message', 'read'])
+        && incoming().keys().size() <= 8;
+
+      allow update: if isSignedIn()
+        && resource.data.userId == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['read', 'updatedAt']);
+    }
+  }
+}
